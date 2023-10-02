@@ -1,0 +1,42 @@
+use project_manager;
+--first trigger
+--go
+--CREATE TRIGGER update_task_spent_expenseee
+--ON SubTask 
+--AFTER UPDATE 
+--as
+--BEGIN
+--  UPDATE task 
+--  SET task.spent_expense =(select sum(subtask.spent_expense)
+--  from SubTask
+--  inner join inserted d
+--	on d.Task_ID=SubTask.Task_ID 
+--  )
+--  where task.ID in
+--  (select distinct (SubTask.Task_ID) from SubTask 
+--  inner join inserted d on 
+--	 d.Task_ID=SubTask.Task_ID
+--  )
+--END
+--go
+
+-- second trigger
+--go
+--CREATE TRIGGER update_project_spent_expenseee
+--ON task 
+--AFTER UPDATE 
+--as
+--BEGIN
+--  UPDATE project 
+--  SET project.expense =(select sum(task.spent_expense)
+--  from task
+--  inner join inserted d
+--	on d.Project_id=project.ID 
+--  )
+--  where project.ID in
+--  (select distinct (project.ID) from task 
+--  inner join inserted d on 
+--	 d.Project_id=project.ID
+--  )
+--END
+--go

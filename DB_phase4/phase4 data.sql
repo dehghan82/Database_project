@@ -1,0 +1,188 @@
+--use project_manager;
+--insert into Employee values
+----(100,'0000000000','Oliver','Jones','Financial',1,3,'2000/1/2'),
+----(200,'2222222222','Jack','Smith','Operational',1,4,'1999/11/12'),
+----(300,'3333333333','Harry','Williams','Financial',1,12,'1990/8/9'),
+----(400,'4444444444','Jacob','Brown','Operational',1,11,'1991/6/7'),
+----(500,'9876543210','Thomas','Evans','Research',1,15,'1989/4/5'),
+----(600,'0123456789','James','Miller','Financial',1,7,'2000/3/2'),
+----(700,'1029384756','Olivia','Murphy','Research',0,1,'2003/4/5'),
+----(800,'1111111111','Emma','Taylor','Research',0,2,'2003/6/7'),
+----(900,'5555556666','Jessica','Wilson','Operational',0,10,'1992/8/9'),
+----(110,'7777788888','Sophi','Garcia','Operational',0,9,'1995/1/1'),
+--(120,'9999933333','Jolia','Gacia','Research',0,10,'1998/9/10');
+--insert into project_manager.dbo.project values
+
+----(300,'DS Project',5000.5,'Martin Jones',0,0,100,100,500,200),
+----(400,'TLA Project',4000.7,'Li Anderson',0,0,200,300,500,400),
+----(600,'Architecture',9000,'Bethany Johnson',0,0,300,100,500,200),
+----(700,'NLP Project',1000.7,'Liam Walsh',0,0,400,300,500,400),
+----(800,'Green Glimmer',3000.1,'Daniel Roy',0,0,500,100,100,200),
+--(900 ,'Os project',4000.2,'Olivia Rakson',0,0,100,100,500,200);
+--insert into project_manager.dbo.Team values
+--(101,'Financial',100),
+--(102,'Operational',400),
+--(103,'Research',500),
+--(104,'Financial',300),
+--(105,'Operational',200),
+--(106,'Research',500);
+
+
+--insert into task values
+--(301,'DS_Preprocess',0,0,0,'2023-06-01 12:00:00',null,99,'Research',0,1000,300,103),
+--(401,'Json visualization',0,0,0,'2023-05-30 12:00:00',null,50,'Operational',0,2000,400,102),
+--(601,'Processor design',8000,400,2,'2023-01-01 12:00:00','2023-05-30 12:00:00',80,'Operational',100,6000, 600,105),
+--(701,'NLP Financial Probe',100,20,1,'2023-05-01 12:00:00',null,50,'Financial',40,300,700,104),
+--(801,'Studying Climate Change',0,0,0,'2023-06-02 12:00:00',null ,60,'Research',0,1500.5,800,106);
+ 
+--insert into SubTask values
+-- (6010,'New Cpu Design',4000,250,1,10,601),
+-- (6011,'Testing Cpu',4000,150,1,9,601),
+-- (7010,'NLP studying',100,20,1,10,701),
+-- (7011,'NLP Budget',0,0,0,7,701),
+-- (3010,'Data Mining',0,0,0,10,301),
+-- (4010,'FA Visualization',0,0,0,8,401),
+-- (8010,'Studying rising sea level',0,0,0,2,801),
+--(4011,'PDA visualization',0,0,0,2,401);
+
+-- insert into Agreement values
+-- (100,'2020-05-05'),
+-- (200,'2020-06-06'),
+-- (300,'2020-07-07'),
+-- (400,'2021-11-10'),
+-- (500,'2021-08-09'),
+-- (600,'2021-12-23'),
+-- (700,'2022-10-29'),
+-- (800,'2022-07-28'),
+-- (900,'2021-01-01'),
+-- (110,'2023-01-01'),
+-- (120,'2023-02-02'),
+-- (130,'2023-03-03'),
+-- (140,'2023-04-04'),
+-- (150,'2023-05-05'),
+-- (250,'2021-01-01'),
+-- (210,'2021-03-03'),
+-- (350,'2021-02-02'),
+-- (230,'2021-03-05'),
+-- (330,'2020-09-10'),
+-- (240,'2019-09-09'),
+-- (420,'2018-10-10'),
+-- (550,'2020-08-08'),
+-- (220,'2021-03-04');
+-- insert into Agreement_Contractual values
+-- (100,'2020-05-05',0,10,'Takmili',5000,8),
+-- (200,'2020-06-06',0,15,'Novin',6000,9),
+-- (300,'2020-07-07',0,9,'Razi',6500,10),
+-- (400,'2021-11-10',0,0,'Parsian',8000,12),
+-- (500,'2021-08-09',0,10,'Takmili',7000,10),
+-- (120,'2023-02-02',0,10,'Khadamat',7000.4,10),
+-- (130,'2023-03-03',0,9,'Pars',8000.1,12),
+-- (140,'2023-04-04',0,5,'Novin',10000,12),
+-- (150,'2023-05-05',0,6,'Razi',5000,7),
+-- (250,'2021-01-01',0,7,'Parsian',6000,8),
+-- (350,'2021-02-02',0,10,'Asia',4000,9),
+-- (210,'2021-03-03',0,11,'Asia',8000,10),
+-- (220,'2021-03-04',0,12,'Pars',6500,7),
+-- (330,'2020-09-10',0,7,'Novin',7000,9),
+-- (240,'2019-09-09',0,9,'Khadamat',8000,10),
+-- (420,'2018-10-10',0,8,'Asia',5500,6),
+-- (550,'2020-08-08',0,10,'Iran',7000,9),
+-- (230,'2021-03-05',0,13,'Takmili',4000,4);
+
+
+-- insert into Agreement_Hourly values
+-- (600,'2021-12-23',20,30),
+-- (700,'2022-10-29',30,30),
+-- (800,'2022-07-28',40,30),
+-- (900,'2021-01-01',25,30),
+-- (110,'2023-01-01',30,30);
+
+-- insert into [Log] values
+-- (30100,'Research','Data mining preprocess','2023-06-01 13:00:00',301,103),
+-- (40100,'Operational','Json visualizing','2023-06-01 12:00:00',401,105),
+-- (60100,'Operational','Processor Design','2023-02-02 12:00:00',601,102),
+-- (70100,'Financial','NLP Probe','2023-05-10 12:00:00',701,104);
+ 
+-- insert into project_agreement_employee values
+-- (300,100,100),
+
+-- (300,200,200),
+-- (300,150,500),--karmand 500 ba gharardad 150 to project 300
+-- (400,120,200),
+ 
+-- (400,300,300),
+-- (400,400,400),
+-- (400,250,500),
+-- (600,210,100),
+-- (600,500,500),
+--(600,220,200),
+--(600,230,300),
+--(700,330,300),
+--(700,240,400),
+-- (700,350,500),
+--(800,420,200),
+--(800,550,500),
+-- (800,110,100),
+-- (600,600,600),
+-- (700,700,700),
+-- (300,800,800),
+-- (300,900,900);
+ 
+
+-- insert into Education values
+-- (100,'IT BS'),
+-- (100,'MBA BS'),
+-- (200,'IT BS'),
+-- (300,'IT MS'),
+-- (400,'IT BS'),
+-- (500,'IT PHD'),
+-- (600,'Industrial BS'),
+-- (700,'HW MS'),
+-- (800,'Civil MS'),
+-- (900,'Civil BS'),
+-- (110,'Civil PHD');
+
+--insert into member_of_team values
+--(101,100),
+--(102,400),
+--(103,500),
+--(104,300),
+--(105,200),
+--(106,500),
+--(101,300),
+--(101,600),
+--(102,110),
+--(102,200),
+--(102,900),
+--(103,700),
+--(103,800),
+--(104,100),
+--(105,110),
+--(105,400),
+--(105,900),
+--(106,800);
+
+--select * from Employee;
+--select * from project;
+--select * from Team;
+--select * from task;
+--select * from SubTask;
+--select * from Agreement;
+--select * from Agreement_Contractual;
+--select * from Agreement_Hourly;
+--select * from [Log];
+--select * from project_agreement_employee;
+--select * from Education;
+--select * from member_of_team;
+----delete from Employee;
+----delete from project;
+----delete from Team;
+----delete from task;
+----delete from subtask;
+----delete from Agreement;
+----delete from Agreement_Contractual;
+----delete from Agreement_Hourly;
+----delete from [Log];
+----delete from project_agreement_employee;
+----delete from Education;
+----delete from member_of_team;
